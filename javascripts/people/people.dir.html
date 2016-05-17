@@ -19,10 +19,10 @@
         <form ng-submit="vm.updates(person)" novalidate>
           <input type="integer" name="id" value={{person.id}} hidden>
           <label>Name:
-          <input type="text" ng-model="vm.person.name" value="{{person.name}}">
+          <input type="text" ng-bind="person.name" value="{{person.name}}">
           </label>
           <label>Description:
-          <input type="text" ng-model="vm.person.description" value="{{person.description}}">
+          <input type="text" ng-bind="person.description" value="{{person.description}}">
           </label>
           <input type="submit" value="Updatez This guy">
         </form>
