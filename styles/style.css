@@ -1,0 +1,16 @@
+.media-object {
+  width: 50px;
+}
+.row{
+  text-align: center;
+  padding-top: 10px;
+  color: grey;
+}
+.media-heading{
+  color: grey;
+
+  text-align: center;
+}
+h10{
+  font-size: 11px;
+}

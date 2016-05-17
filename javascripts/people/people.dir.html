@@ -1,0 +1,46 @@
+
+<h1 ng-bind="2 + 3"></h1>
+<h2>Things Are Good</h2>
+<br>
+<div class="container">
+  <!-- <h2 ng-bind="vm.people | json"></h2> -->
+  <div class="row" ng-repeat='person in vm.people'>
+      <div class="six columns">
+
+        <a class="media-left" href="#">
+      <img class="media-object" ng-src="https://robohash.org/sdfd"
+           alt="Generic placeholder image">
+        </a>
+        <h4 class="media-heading" ng-bind="person.name"></h4>
+        <form ng-submit="vm.deletes(person.id)" novalidate>
+          <input type="integer" name="name" value={{person.id}} hidden>
+          <input type="submit" value="Deletez This guy">
+        </form>
+        <form ng-submit="vm.updates(person)" novalidate>
+          <input type="integer" name="id" value={{person.id}} hidden>
+          <label>Name:
+          <input type="text" ng-model="vm.person.name" value="{{person.name}}">
+          </label>
+          <label>Description:
+          <input type="text" ng-model="vm.person.description" value="{{person.description}}">
+          </label>
+          <input type="submit" value="Updatez This guy">
+        </form>
+      </div>
+      <div class="two columns"><h4 ng-bind="$index"></h4></div>
+      <div class="four columns">
+      <h6 class="media-heading" ng-bind="person.description"></h6>
+  </div>
+</div>
+<div class="row">
+    <form novalidate ng-submit="vm.sendIt(vm.person)">
+      <label>Name:
+      <input type="text" ng-model="vm.person.name" value="">
+      </label>
+      <label>Description:
+      <input type="text" ng-model="vm.person.description" value="">
+      </label>
+      <button type="submit">Submit Person</button>
+    </form>
+</div>
+</div>
