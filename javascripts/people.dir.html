@@ -1,0 +1,40 @@
+<h1 ng-bind="2 + 3"></h1>
+<h2>Things Are Good</h2>
+<br>
+<div class="container">
+  <div class="row" ng-repeat='person in vm.people'>
+    <div class="row"><h4>{{$index}}</h4></div>
+    <div class="row">
+      <div class="four columns">
+
+        <a class="media-left" href="#">
+      <img class="media-object" ng-src="https://robohash.org/sdfd"
+           alt="Generic placeholder image">
+        </a>
+      </div>
+      <div class="eight columns">
+      <h4 class="media-heading">{{person.name}}</h4>
+      <h10 class="media-heading" ng-bind="person.description"></h5>
+    </div>
+  </div>
+</div>
+</div>
+
+<style>
+  .media-object {
+    width: 50px;
+  }
+  .row{
+    text-align: center;
+    padding-top: 10px;
+    color: grey;
+  }
+  .media-heading{
+    color: grey;
+
+    text-align: center;
+  }
+  h10{
+    font-size: 11px;
+  }
+</style>
