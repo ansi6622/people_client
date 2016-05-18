@@ -17,6 +17,8 @@
       vm.person= {}
       vm.sendIt = sendIt
       vm.deletes = deletes
+      vm.updates = updates
+      vm.frm = {}
       activate()
       function activate () {
         peopleService.list().then( function (response) {
@@ -34,6 +36,17 @@
           console.log("this is the delete response hopefully data, ie an ID", response);
             for (var i = 0; i < vm.people.length; i++) {
               if (vm.people[i].id == response) {
+                vm.people.splice(i, 1);
+                return vm.people;
+              }
+            }
+        })
+      }
+      function updates (person, id){
+        peopleService.update(person, id).then(function(response){
+          console.log("this is the update response hopefully data", response);
+            for (var i = 0; i < vm.people.length; i++) {
+              if (vm.people[i].id == response.id) {
                 vm.people.splice(i, 1);
                 return vm.people;
               }

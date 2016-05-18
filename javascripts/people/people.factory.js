@@ -12,6 +12,7 @@
       list: listPeople,
       add: addPeople,
       del: del,
+      update: update
     }
 
     function listPeople () {
@@ -39,11 +40,13 @@
       })
     }
 
-    function update (data) {
-      console.log("id", data.id);
-      return $http.post('http://localhost:3000/api/v1/list/' + data.id, data)
+    function update (person, id) {
+      console.log("person", person);
+      console.log("id", id);
+      return $http.post('http://localhost:3000/api/v1/update/' + id, person)
       .then( function (response) {
-        var data = response.data.person[0]
+        console.log("oh looky", response);
+        var data = response.data.person
         return data;
       })
     }
