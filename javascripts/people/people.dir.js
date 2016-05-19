@@ -19,6 +19,11 @@
       vm.deletes = deletes
       vm.updates = updates
       vm.frm = {}
+
+      // vm.$watch // => $watch is not defined on vm
+      // $scope.$watch // => √
+      // $scope.vm = {}
+      
       activate()
       function activate () {
         peopleService.list().then( function (response) {

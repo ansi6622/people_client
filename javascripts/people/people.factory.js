@@ -43,7 +43,7 @@
     function update (person, id) {
       console.log("person", person);
       console.log("id", id);
-      return $http.post('http://localhost:3000/api/v1/update/' + id, person)
+      return $http.post('http://localhost:3000/api/v1/list/' + id, person)
       .then( function (response) {
         console.log("oh looky", response);
         var data = response.data.person
